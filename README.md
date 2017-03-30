@@ -48,7 +48,7 @@ easily activate the virtual environment and start the local host, given
 that all the previous installations are successfully completed.
 
 Heroku Deployment
------------------
+-------------------
 
 The code is already deployed on the *H**e**r**o**k**u* server[1]. The
 deployment is done through Github.  
