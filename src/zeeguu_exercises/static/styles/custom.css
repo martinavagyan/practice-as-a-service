@@ -800,3 +800,9 @@ body
 :-moz-placeholder { /* Firefox 18- */
   color: #c8cccf;
 }
+
+/** Bookmark source*/
+.bookmark-source{
+	color: grey;
+	float:right;
+}

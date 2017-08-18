@@ -59,6 +59,7 @@ Exercise.prototype = {
 		this.$deleteBtn			= this.$elem.find('#btn-delete');
 		this.$reportBtn			= this.$elem.find('#btn-report');
 		this.$speakBtn			= this.$elem.find('#btn-speak');
+		this.$sourceBtn			= this.$elem.find('#btn-source');
 		this.cacheCustomDom();
 	},
 
@@ -209,6 +210,14 @@ Exercise.prototype = {
 		this.onRenderNextEx();
 	},
 
+	/**
+	 * Function to open the source in a new tab
+	 * */
+    giveSource: function (idx) {
+    	let url = this.data[idx].url;
+        let win = window.open(url, '_blank');
+        win.focus();
+    },
 
 	/**
 	 *    Removes focus of page elements
@@ -268,6 +277,7 @@ Exercise.prototype = {
 		//Bind general actions
 		this.$deleteBtn.click(() => {this.deleteBookmark(this.index);});
 		this.$reportBtn.click(() => {this.giveFeedbackBox(this.index);});
+        this.$sourceBtn.click(() => {this.giveSource(this.index);});
 		this.$speakBtn.click(() => {this.handleSpeak();});
 
 		//Bind custom actions for each exercise
@@ -281,6 +291,7 @@ Exercise.prototype = {
 		this.$deleteBtn.off( "click");
 		this.$reportBtn.off( "click");
 		this.$speakBtn.off( "click");
+        this.$sourceBtn.off( "click");
 		//TODO terminate individual bindings for each exercise,
 		//TODO for that implement terminate method for each
 	},
